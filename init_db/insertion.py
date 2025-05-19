@@ -1,7 +1,7 @@
 import psycopg2
 import csv
 
-# Параметры подключения к БД (замените на свои)
+# Параметры подключения к БД 
 conn = psycopg2.connect(
     dbname="postgres",
     user="postgres",
@@ -26,7 +26,7 @@ def import_csv_to_postgres(csv_file_path):
                 new_id = int(max_id) + 1
                 row['id'] = new_id
 
-            # Вставляем данные (все поля из CSV)
+            # Вставляем данные 
             cursor.execute("""
                 INSERT INTO sales_data (
                     id, customer_first_name, customer_last_name, customer_age, customer_email,
